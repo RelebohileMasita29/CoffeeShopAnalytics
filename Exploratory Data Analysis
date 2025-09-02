@@ -1,0 +1,45 @@
+--EXPLORATORY DATA ANALYSIS--
+--HOW MANY UNIQUE TRANSACTIONS DO WE HAVE HAVE?--
+SELECT COUNT(DISTINCT(transaction_id)) FROM coffee;
+--149116--
+
+--WHAT PERIOD DOES THE DATA RANGE?--
+SELECT MIN(transaction_date),
+       MAX(transaction_date)
+       FROM coffee;
+--2023/01/01 to 2023/06/30--
+
+--WHAT TIME DOES THE EARLIEST AND LATEST TRANSACTION OCCUR?--
+SELECT MIN(transaction_time),
+       MAX(transaction_time)
+       FROM coffee;
+-- 06:00AM AND 20:59PM, RESPECTIVELY--
+
+--WHAT IS THE TOTAL QUANTITY SOLD?--
+SELECT SUM(transaction_qty) FROM coffee;
+--214470 UNITS--
+
+--HOW MANY STORES ARE THERE?--
+SELECT COUNT(DISTINCT(store_id)) FROM coffee;
+-- 3 STORES--
+
+--WHAT ARE THE NAMES OF THE STORES?--
+SELECT DISTINCT(store_location) FROM coffee;
+--ASTORIA, LOWER MANHATTAN & HELL'S KITCHEN--
+
+--WHAT IS PRODUCT ID?--
+--A product identifier is a unique code or number assigned to a specific product to distinguish it from other products--
+SELECT COUNT(DISTINCT(product_id)) FROM coffee;
+--80 UNIQUE PRODUCT WERE SOLD--
+
+--HOW MANY PRODUCT CATEGORIES ARE THERE?--
+SELECT COUNT(DISTINCT(product_category)) FROM coffee;
+--THERE ARE 9 PRODUCT CATEGORIES--
+
+--HOW MANY PRODUCT TYPES ARE THERE?--
+SELECT COUNT(DISTINCT(product_type)) FROM coffee;
+--THERE ARE 29 DIFFERENT TYPES OF PRODUCTS--
+
+--HOW MANY DIFFERENT PRODUCT DETAILS ARE THERE?--
+SELECT COUNT(DISTINCT(product_detail)) FROM coffee;
+--80, WHICH ALIGN WITH THE PRODUCT ID'S--
